@@ -1,0 +1,68 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+
+    <LangVersion>8.0</LangVersion>
+    <Features>strict</Features>
+    <Nullable>enable</Nullable>
+
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <IncludeSymbols>true</IncludeSymbols>
+    <EmbedAllSources>true</EmbedAllSources>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageProjectUrl>https://github.com/carlreinke/ItsyBitsy.Collections.ReadOnlyArray</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/carlreinke/ItsyBitsy.Collections.ReadOnlyArray</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>array;readonly;immutable</PackageTags>
+
+    <Version>1.0.0</Version>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <InformationalVersion>$(FileVersion)</InformationalVersion>
+
+    <Authors>Carl Reinke</Authors>
+    <Description>Provides a read-only array type that is convertable from T[] and ImmutableArray&lt;T&gt;.</Description>
+    <Copyright>2020 Carl Reinke</Copyright>
+    <NeutralLanguage>en-US</NeutralLanguage>
+
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\ItsyBitsy.Collections.ReadOnlyArray.snk</AssemblyOriginatorKeyFile>
+
+    <DocumentationFile>bin\$(Configuration)\ItsyBitsy.Collections.ReadOnlyArray.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="PublicAPI.Shipped.txt" />
+    <None Remove="PublicAPI.Unshipped.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="PublicAPI.Shipped.txt" />
+    <AdditionalFiles Include="PublicAPI.Unshipped.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.CodeAnalysis.PublicApiAnalyzers" Version="2.9.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="System.Collections.Immutable" Version="1.4.0" />
+    <PackageReference Include="System.Memory" Version="4.5.0" />
+    <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="4.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>

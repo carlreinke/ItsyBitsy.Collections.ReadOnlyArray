@@ -1,0 +1,38 @@
+{
+  "metadata": [
+    {
+      "src": [
+        {
+          "files": [
+            "ItsyBitsy.Collections.ReadOnlyArray/ItsyBitsy.Collections.ReadOnlyArray.csproj"
+          ],
+          "src": "../"
+        }
+      ],
+      "dest": "obj/docfx/api",
+      "shouldSkipMarkup": true,
+      "properties": {
+        "TargetFramework": "netstandard2.0"
+      }
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": [
+          "api/**.yml"
+        ],
+        "src": "obj/docfx/"
+      },
+      {
+        "files": [
+          "api/index.md",
+          "toc.yml",
+          "*.md"
+        ]
+      },
+    ],
+    "dest": "bin/Docs",
+    "disableGitFeatures": true
+  }
+}

@@ -1,0 +1,43 @@
+ItsyBitsy.Collections.ReadOnlyArray
+ItsyBitsy.Collections.ReadOnlyArray<T>
+ItsyBitsy.Collections.ReadOnlyArray<T>.As<TOther>() -> ItsyBitsy.Collections.ReadOnlyArray<TOther>
+ItsyBitsy.Collections.ReadOnlyArray<T>.AsMemory() -> System.ReadOnlyMemory<T>
+ItsyBitsy.Collections.ReadOnlyArray<T>.AsSpan() -> System.ReadOnlySpan<T>
+ItsyBitsy.Collections.ReadOnlyArray<T>.CastArray<TOther>() -> ItsyBitsy.Collections.ReadOnlyArray<TOther>
+ItsyBitsy.Collections.ReadOnlyArray<T>.CopyTo(T[] destination) -> void
+ItsyBitsy.Collections.ReadOnlyArray<T>.CopyTo(T[] destination, int destinationIndex) -> void
+ItsyBitsy.Collections.ReadOnlyArray<T>.CopyTo(int sourceIndex, T[] destination, int destinationIndex, int length) -> void
+ItsyBitsy.Collections.ReadOnlyArray<T>.Enumerator
+ItsyBitsy.Collections.ReadOnlyArray<T>.Enumerator.Current.get -> T
+ItsyBitsy.Collections.ReadOnlyArray<T>.Enumerator.MoveNext() -> bool
+ItsyBitsy.Collections.ReadOnlyArray<T>.Equals(ItsyBitsy.Collections.ReadOnlyArray<T> other) -> bool
+ItsyBitsy.Collections.ReadOnlyArray<T>.GetEnumerator() -> ItsyBitsy.Collections.ReadOnlyArray<T>.Enumerator
+ItsyBitsy.Collections.ReadOnlyArray<T>.IndexOf(T item) -> int
+ItsyBitsy.Collections.ReadOnlyArray<T>.IndexOf(T item, int startIndex) -> int
+ItsyBitsy.Collections.ReadOnlyArray<T>.IndexOf(T item, int startIndex, int count) -> int
+ItsyBitsy.Collections.ReadOnlyArray<T>.IsDefault.get -> bool
+ItsyBitsy.Collections.ReadOnlyArray<T>.IsDefaultOrEmpty.get -> bool
+ItsyBitsy.Collections.ReadOnlyArray<T>.IsEmpty.get -> bool
+ItsyBitsy.Collections.ReadOnlyArray<T>.ItemRef(int index) -> T
+ItsyBitsy.Collections.ReadOnlyArray<T>.LastIndexOf(T item) -> int
+ItsyBitsy.Collections.ReadOnlyArray<T>.LastIndexOf(T item, int startIndex) -> int
+ItsyBitsy.Collections.ReadOnlyArray<T>.LastIndexOf(T item, int startIndex, int count) -> int
+ItsyBitsy.Collections.ReadOnlyArray<T>.Length.get -> int
+ItsyBitsy.Collections.ReadOnlyArray<T>.ToImmutableArray() -> System.Collections.Immutable.ImmutableArray<T>
+ItsyBitsy.Collections.ReadOnlyArray<T>.this[int index].get -> T
+override ItsyBitsy.Collections.ReadOnlyArray<T>.Equals(object obj) -> bool
+override ItsyBitsy.Collections.ReadOnlyArray<T>.GetHashCode() -> int
+static ItsyBitsy.Collections.ReadOnlyArray.FromArray<T>(T[] array) -> ItsyBitsy.Collections.ReadOnlyArray<T>
+static ItsyBitsy.Collections.ReadOnlyArray.FromImmutableArray<T>(System.Collections.Immutable.ImmutableArray<T> array) -> ItsyBitsy.Collections.ReadOnlyArray<T>
+static ItsyBitsy.Collections.ReadOnlyArray<T>.CastUp<TDerived>(ItsyBitsy.Collections.ReadOnlyArray<TDerived> array) -> ItsyBitsy.Collections.ReadOnlyArray<T>
+static ItsyBitsy.Collections.ReadOnlyArray<T>.implicit operator ItsyBitsy.Collections.ReadOnlyArray<T>(System.Collections.Immutable.ImmutableArray<T> array) -> ItsyBitsy.Collections.ReadOnlyArray<T>
+static ItsyBitsy.Collections.ReadOnlyArray<T>.implicit operator ItsyBitsy.Collections.ReadOnlyArray<T>(T[] array) -> ItsyBitsy.Collections.ReadOnlyArray<T>
+static ItsyBitsy.Collections.ReadOnlyArray<T>.operator !=(ItsyBitsy.Collections.ReadOnlyArray<T> left, ItsyBitsy.Collections.ReadOnlyArray<T> right) -> bool
+static ItsyBitsy.Collections.ReadOnlyArray<T>.operator !=(ItsyBitsy.Collections.ReadOnlyArray<T> left, ItsyBitsy.Collections.ReadOnlyArray<T>? right) -> bool
+static ItsyBitsy.Collections.ReadOnlyArray<T>.operator !=(ItsyBitsy.Collections.ReadOnlyArray<T>? left, ItsyBitsy.Collections.ReadOnlyArray<T> right) -> bool
+static ItsyBitsy.Collections.ReadOnlyArray<T>.operator !=(ItsyBitsy.Collections.ReadOnlyArray<T>? left, ItsyBitsy.Collections.ReadOnlyArray<T>? right) -> bool
+static ItsyBitsy.Collections.ReadOnlyArray<T>.operator ==(ItsyBitsy.Collections.ReadOnlyArray<T> left, ItsyBitsy.Collections.ReadOnlyArray<T> right) -> bool
+static ItsyBitsy.Collections.ReadOnlyArray<T>.operator ==(ItsyBitsy.Collections.ReadOnlyArray<T> left, ItsyBitsy.Collections.ReadOnlyArray<T>? right) -> bool
+static ItsyBitsy.Collections.ReadOnlyArray<T>.operator ==(ItsyBitsy.Collections.ReadOnlyArray<T>? left, ItsyBitsy.Collections.ReadOnlyArray<T> right) -> bool
+static ItsyBitsy.Collections.ReadOnlyArray<T>.operator ==(ItsyBitsy.Collections.ReadOnlyArray<T>? left, ItsyBitsy.Collections.ReadOnlyArray<T>? right) -> bool
+static readonly ItsyBitsy.Collections.ReadOnlyArray<T>.Empty -> ItsyBitsy.Collections.ReadOnlyArray<T>
