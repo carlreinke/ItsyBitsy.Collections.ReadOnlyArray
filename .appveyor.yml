@@ -17,9 +17,10 @@ build:
   verbosity: minimal
 before_build:
 - pwsh: nuget restore -Verbosity quiet
-- pwsh: dotnet tool install --global Codecov.Tool --version 1.7.1
 test_script:
 - pwsh: dotnet test -c $Env:CONFIGURATION /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput=bin\$Env:CONFIGURATION\coverage.xml
+after_test:
+- pwsh: dotnet tool install --global Codecov.Tool --version 1.7.1
 - pwsh: codecov --file *\bin\$Env:CONFIGURATION\coverage.xml --flag $Env:CONFIGURATION
 artifacts:
 - path: '**\*.nupkg'
