@@ -41,6 +41,38 @@ namespace ItsyBitsy.Collections
         /// Converts an <see cref="ImmutableArray{T}"/> to a <see cref="ReadOnlyArray{T}"/>.
         /// </summary>
         public static ReadOnlyArray<T> FromImmutableArray<T>(ImmutableArray<T> array) => array;
+
+        /// <summary>
+        /// Creates an immutable array that contains the specified elements from a read-only array.
+        /// </summary>
+        /// <typeparam name="T">The type of the elements in the array.</typeparam>
+        /// <param name="items">The source array.</param>
+        /// <param name="start">The index of the first element to copy from
+        ///     <paramref name="items"/>.</param>
+        /// <param name="length">The number of elements to copy from <paramref name="items"/>.
+        ///     </param>
+        /// <returns>An immutable array that contains the specified elements from the source array.
+        ///     </returns>
+        public static ImmutableArray<T> CreateImmutable<T>(ReadOnlyArray<T> items, int start, int length)
+        {
+            // This is safe because ImmutableArray.Create does not mutate the array.
+            var underlyingArray = Unsafe.As<ReadOnlyArray<T>, T[]>(ref items);
+            return ImmutableArray.Create(underlyingArray, start, length);
+        }
+
+        /// <summary>
+        /// Creates an immutable array that contains the specified elements from a read-only span.
+        /// </summary>
+        /// <typeparam name="T">The type of the elements in the array.</typeparam>
+        /// <param name="items">The source span.</param>
+        /// <returns>An immutable array that contains the specified elements from the source span.
+        ///     </returns>
+        public static ImmutableArray<T> CreateImmutable<T>(ReadOnlySpan<T> items)
+        {
+            var underlyingArray = items.ToArray();
+            // This is safe because the mutable array has no other references.
+            return Unsafe.As<T[], ImmutableArray<T>>(ref underlyingArray);
+        }
     }
 
     /// <summary>

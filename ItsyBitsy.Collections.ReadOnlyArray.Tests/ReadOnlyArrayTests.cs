@@ -54,6 +54,35 @@ namespace ItsyBitsy.Collections.Tests
             Assert.Equal(expectedInstance, instance);
         }
 
+        [Theory]
+        [InlineData(new byte[0], 0, 0, new byte[0])]
+        [InlineData(new byte[] { 3, 1, 2 }, 0, 3, new byte[] { 3, 1, 2 })]
+        [InlineData(new byte[] { 3, 1, 2 }, 0, 2, new byte[] { 3, 1 })]
+        [InlineData(new byte[] { 3, 1, 2 }, 1, 1, new byte[] { 1 })]
+        [InlineData(new byte[] { 3, 1, 2 }, 1, 2, new byte[] { 1, 2 })]
+        public static void CreateImmutableReadOnlyArray_Always_ReturnsImmutableArrayContainingSelectedItems(byte[] array, int start, int length, IEnumerable<byte> expectedValues)
+        {
+            ReadOnlyArray<byte> readOnlyArray = array;
+
+            var instance = ReadOnlyArray.CreateImmutable(readOnlyArray, start, length);
+
+            Assert.Equal(expectedValues, instance);
+        }
+
+        [Theory]
+        [InlineData(null)]
+        [InlineData(new byte[0])]
+        [InlineData(new byte[] { 3, 1, 2 })]
+        public static void CreateImmutableReadOnlySpan_Always_ReturnsImmutableArrayContainingItems(byte[]? array)
+        {
+            ReadOnlySpan<byte> span = array;
+
+            var instance = ReadOnlyArray.CreateImmutable(span);
+
+            IEnumerable<byte> expectedValues = array ?? Array.Empty<byte>();
+            Assert.Equal(expectedValues, instance);
+        }
+
         [Fact]
         public static void Empty_Always_IsNotDefault()
         {
