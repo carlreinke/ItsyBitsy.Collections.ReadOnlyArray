@@ -418,7 +418,7 @@ namespace ItsyBitsy.Collections
         /// <summary>
         /// Determines if two arrays are the same array.
         /// </summary>
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             return obj is ReadOnlyArray<T> other && Equals(other);
         }
